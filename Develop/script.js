@@ -11,8 +11,6 @@ var finalPassword = [];
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-generateBtn.addEventListener("click", createPassword);
-
 function passwordOptions() {
   finalPassword = [];
 
@@ -42,6 +40,8 @@ if(confirm ("Do you want special characters included?")) {
 
 return true
 }
+
+generateBtn.addEventListener("click", createPassword);
 
 function createPassword() {
   var password = "";
