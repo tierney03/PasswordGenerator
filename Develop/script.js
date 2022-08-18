@@ -41,13 +41,13 @@ if(confirm ("Do you want special characters included?")) {
 return true
 }
 
-
-function writePassword() {
+function createPassword() {
   var password = "";
   for (var i=0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * finalPassword.length);
-    password = password + finalPassword(randomIndex);
+    password = password + finalPassword[randomIndex];
   }
+
   return password;
 }
 
@@ -56,13 +56,15 @@ function writePassword() {
   var passwordPrompts = passwordOptions();
   var passwordText = document.querySelector("#password");
   
-  if(passwordPrompts) {
-    var newPassword = writePassword();
-  }
+ // if(passwordPrompts) {
+  var newPassword = createPassword();
+  //}
 
-  passwordText.value = password;
+  console.log(newPassword)
+  passwordText.value = newPassword;
 
 }
 generateBtn.addEventListener("click", writePassword);
+
 
 
